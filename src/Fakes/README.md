@@ -13,7 +13,10 @@ Fakes/Taiken.Fake<System>/    наприклад Taiken.FakePos, Taiken.FakePsp
 ## Правила залежностей
 
 - `Taiken.Fake<System>` → **нічого з `src/`**. Спільні типи з рештою рішення зробили б мапінг
-  у відповідному адаптері (`Integrations/<Kind>/Taiken.<Kind>.Fake`) нечесним і замаскували б
-  реальні відмінності форматів, які й перевіряють contract tests.
+  у відповідному адаптері (`Integrations/<Kind>/Taiken.<Kind>.Fake<System>`, наприклад
+  `Taiken.Pos.FakePos`) нечесним і замаскували б реальні відмінності форматів, які й перевіряють
+  contract tests.
+- На `Taiken.Fake<System>` не посилається ніхто з `src/`. Відповідний адаптер говорить із ним
+  лише по мережі (HTTP), як зі справжньою системою.
 
 Перевіряється `Taiken.ArchitectureTests` (з M2).
