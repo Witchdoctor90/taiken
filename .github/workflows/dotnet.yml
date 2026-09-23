@@ -26,13 +26,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # NuGet cache (cache: true) is deliberately omitted until the first PackageReference
+      # exists: with zero packages to restore, ~/.nuget/packages/ is never created and the
+      # post-step fails trying to cache a path that doesn't exist on disk.
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
-          cache: true
-          cache-dependency-path: |
-            **/*.csproj
-            Directory.Packages.props
 
       - name: Restore
         run: dotnet restore
