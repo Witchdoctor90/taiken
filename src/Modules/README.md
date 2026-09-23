@@ -1,0 +1,23 @@
+# Modules
+
+Модульний моноліт: кожен модуль — окремий bounded context з власною схемою БД.
+Спілкування між модулями лише через контракти та outbox-події, без FK між схемами.
+
+## Структура нового модуля
+
+```
+Modules/<Name>/
+├── Taiken.<Name>.Contracts/   публічні події, DTO, інтерфейси запитів
+└── Taiken.<Name>/             домен + EF + handlers + endpoints, усе internal
+```
+
+Новий модуль = нова папка + рівно ці 2 проєкти. Модулі: Customers, Venues, Payments, Loyalty
+(див. [план M0–M7](https://linear.app/taiken-al/document/taiken-core-plan-i-poslidovnist-m0-m7-450656402af2)) — з'являються поступово, під конкретний milestone, а не всі одразу в M0.
+
+## Правила залежностей
+
+- `Taiken.<Name>.Contracts` → лише `SharedKernel`.
+- `Taiken.<Name>` → свої `Contracts`, чужі `*.Contracts`, `SharedKernel`, `*.Abstractions`
+  з `Integrations`. **Ніколи** — реалізація (`Taiken.<Name>`) іншого модуля.
+
+Перевіряється `Taiken.ArchitectureTests` (з M2).

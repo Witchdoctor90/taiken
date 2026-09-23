@@ -55,3 +55,23 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Node / pnpm
+node_modules/
+.pnpm-store/
+dist/
+.turbo/
+
+# dotenv environment variables file (local overrides)
+.env.local

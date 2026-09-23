@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Host/">
+    <Project Path="src/Host/Taiken.Api/Taiken.Api.csproj" />
+  </Folder>
+</Solution>
