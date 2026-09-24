@@ -48,7 +48,7 @@ Proposed
   схемі як `string` (`format: uuid`) — через JSON-конвертер і schema transformer. Інакше в
   TS-клієнті вони стали б об'єктами.
 - **Гроші** — `{ amountMinor: integer, currency: string }` (ISO 4217). Мінорні одиниці, як у
-  `Money` (ADR 0001, SharedKernel). Суми в межах закладу далекі від меж точності `number` у JS.
+  `Money` (ADR 0001, Shared). Суми в межах закладу далекі від меж точності `number` у JS.
 - **Enum** — рядками (`JsonStringEnumConverter`), у TS стають union-типами.
 - **Nullable** — з nullable reference types C#: що не nullable в C#, те required у схемі.
 - **Помилки** — RFC 7807 `ProblemDetails` зі стабільним машинним полем `code`

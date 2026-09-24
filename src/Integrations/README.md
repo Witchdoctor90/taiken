@@ -25,8 +25,8 @@ keyed service (див. CLAUDE.md, розділ "Провайдери"). Моду
 
 ## Правила залежностей
 
-- `Taiken.<Kind>.Abstractions` → лише `SharedKernel`.
-- `Taiken.<Kind>.<Provider>` → свої `Abstractions` + `SharedKernel`. **Ніколи** — `Modules`.
+- `Taiken.<Kind>.Abstractions` → лише `Shared`.
+- `Taiken.<Kind>.<Provider>` → свої `Abstractions` + `Shared`. **Ніколи** — `Modules`.
 - Адаптер до фейкової системи (`Taiken.<Kind>.Fake<System>`) говорить із нею **лише по мережі**
   (HTTP), через власні `internal` DTO цього адаптера — так само, як говоритиме зі справжньою
   системою. Він **не** посилається на проєкт з `src/Fakes/`: спільні типи з фейком зробили б

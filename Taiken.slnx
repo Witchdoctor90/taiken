@@ -1,6 +1,12 @@
 <Solution>
   <Folder Name="/src/" />
+  <Folder Name="/src/Core/">
+    <Project Path="src/Core/Taiken.Shared/Taiken.Shared.csproj" />
+  </Folder>
   <Folder Name="/src/Host/">
     <Project Path="src/Host/Taiken.Api/Taiken.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Taiken.Shared.Tests/Taiken.Shared.Tests.csproj" />
   </Folder>
 </Solution>

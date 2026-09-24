@@ -56,7 +56,7 @@ dotnet run --project src/Host/Taiken.Api          # /health/live, /health/ready
 @README.md
 @src/Modules/README.md
 @src/Integrations/README.md
-@src/BuildingBlocks/README.md
+@src/Core/README.md
 @src/Fakes/README.md
 @tests/README.md
 
@@ -76,7 +76,7 @@ dotnet run --project src/Host/Taiken.Api          # /health/live, /health/ready
 - Проєкт створюється разом із першим кодом у ньому. Порожніх проєктів «на майбутнє» не буває.
 - Абстракція (інтерфейс, базовий клас, generic-хелпер) з'являється, коли є ≥2 реальні споживачі.
   Один споживач — конкретний клас. Виняток — порти в `*.Abstractions`: це межа із зовнішньою системою.
-- У `BuildingBlocks` потрапляє лише те, що вже повторилось у ≥2 модулях.
+- У `Core` потрапляє лише те, що вже повторилось у ≥2 модулях.
 - Жодних «про всяк випадок» параметрів, конфігурації, feature flags, точок розширення.
 
 Якщо здається, що без заготовки не обійтись, — спитай.
@@ -93,7 +93,7 @@ dotnet run --project src/Host/Taiken.Api          # /health/live, /health/ready
   `pos_provider` / `psp_provider` закладу. Модуль отримує адаптер за ключем, не знаючи конкретного типу.
 - **Пакети.** Версії — тільки в `Directory.Packages.props` (CPM), у `.csproj` — `PackageReference`
   без `Version`. Новий пакет — згадати в описі PR з поясненням навіщо.
-- **Ідентифікатори** — strongly-typed з SharedKernel (`VenueId`, `CustomerId`, …), не голі `Guid`.
+- **Ідентифікатори** — strongly-typed з Shared (`VenueId`, `CustomerId`, …), не голі `Guid`.
 - **Помилки домену** — `Result<T>`, не винятки. Виняток — для справді виняткового (впала інфраструктура).
 - **Час** — лише через `TimeProvider` з DI. `DateTime.Now` / `DateTime.UtcNow` заборонені.
 - **Маппінг** зовнішнього формату в canonical — явний код в адаптері. Без AutoMapper і рефлексії.

@@ -57,11 +57,11 @@ Taiken Core — бекенд оплати й лояльності для зак�
 
 | Проєкт | Може посилатися на |
 |---|---|
-| `Taiken.<Name>.Contracts` | `SharedKernel` |
-| `Taiken.<Name>` | свої `Contracts`, чужі `*.Contracts`, `SharedKernel`, `Integrations/*/*.Abstractions` |
-| `Integrations/<Kind>/Taiken.<Kind>.Abstractions` | `SharedKernel` |
-| `Integrations/<Kind>/Taiken.<Kind>.<Provider>` | свої `Abstractions`, `SharedKernel` |
-| `BuildingBlocks/*` | інші `BuildingBlocks`; ніколи — `Modules`, `Integrations`, `Fakes` |
+| `Taiken.<Name>.Contracts` | `Shared` |
+| `Taiken.<Name>` | свої `Contracts`, чужі `*.Contracts`, `Shared`, `Integrations/*/*.Abstractions` |
+| `Integrations/<Kind>/Taiken.<Kind>.Abstractions` | `Shared` |
+| `Integrations/<Kind>/Taiken.<Kind>.<Provider>` | свої `Abstractions`, `Shared` |
+| `Core/*` | інші `Core`; ніколи — `Modules`, `Integrations`, `Fakes` |
 | `Fakes/*` | нічого з `src/` |
 | `Host/Taiken.Api` | усе, крім `Fakes` |
 

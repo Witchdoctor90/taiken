@@ -1,0 +1,2 @@
+P:System.DateTime.Now;Use TimeProvider (DI) instead of DateTime.Now.
+P:System.DateTime.UtcNow;Use TimeProvider (DI) instead of DateTime.UtcNow.

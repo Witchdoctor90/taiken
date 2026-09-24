@@ -97,7 +97,7 @@ Canonical `Bill`, `BillRef`, `ProviderSession`, `ProviderPaymentUpdate` — як
 повторів і логуванню, а не бізнес-логіці:
 
 ```csharp
-// SharedKernel
+// Shared
 public abstract record IntegrationError(string? RawCode, string Message)
 {
     public abstract RetryPolicy Retry { get; }   // Safe | AfterReconcile | Never
@@ -194,7 +194,7 @@ public abstract class PaymentProviderContract<TAdapter> where TAdapter : IPaymen
 ### Правила залежностей (ArchitectureTests)
 
 - Модулі посилаються лише на `*.Abstractions`, ніколи на адаптер.
-- Адаптер посилається лише на свій `*.Abstractions` (і SharedKernel-примітиви).
+- Адаптер посилається лише на свій `*.Abstractions` (і Shared-примітиви).
 - DTO провайдера — `internal`; жодна збірка поза адаптером їх не бачить.
 - `Fakes/*` не посилаються на `src/`, і ніщо в `src/` не посилається на `Fakes/*`.
 - Лише хост реєструє адаптери в DI.

@@ -20,8 +20,8 @@ Modules/<Name>/
 
 ## Правила залежностей
 
-- `Taiken.<Name>.Contracts` → лише `SharedKernel`.
-- `Taiken.<Name>` → свої `Contracts`, чужі `*.Contracts`, `SharedKernel`, `*.Abstractions`
+- `Taiken.<Name>.Contracts` → лише `Shared`.
+- `Taiken.<Name>` → свої `Contracts`, чужі `*.Contracts`, `Shared`, `*.Abstractions`
   з `Integrations`. **Ніколи** — реалізація (`Taiken.<Name>`) іншого модуля.
 
 Перевіряється `Taiken.ArchitectureTests` (з M2).
