@@ -2,11 +2,15 @@
   <Folder Name="/src/" />
   <Folder Name="/src/Core/">
     <Project Path="src/Core/Taiken.Shared/Taiken.Shared.csproj" />
+    <Project Path="src/Core/Taiken.Persistence/Taiken.Persistence.csproj" />
+    <Project Path="src/Core/Taiken.Messaging/Taiken.Messaging.csproj" />
   </Folder>
   <Folder Name="/src/Host/">
     <Project Path="src/Host/Taiken.Api/Taiken.Api.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Taiken.Shared.Tests/Taiken.Shared.Tests.csproj" />
+    <Project Path="tests/Taiken.Persistence.Tests/Taiken.Persistence.Tests.csproj" />
+    <Project Path="tests/Taiken.Messaging.Tests/Taiken.Messaging.Tests.csproj" />
   </Folder>
 </Solution>

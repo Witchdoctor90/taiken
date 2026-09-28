@@ -1,3 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <PropertyGroup>
+    <UserSecretsId>d0e6f4a2-2f1a-4b8a-9a4e-9c2a5a2e1c7a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Taiken.Messaging\Taiken.Messaging.csproj" />
+    <ProjectReference Include="..\..\Core\Taiken.Persistence\Taiken.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

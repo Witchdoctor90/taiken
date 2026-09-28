@@ -32,8 +32,22 @@ POS і PSP — фейки за портами, Telegram — справжній �
 dotnet restore
 dotnet build --no-restore                         # warnings = errors
 dotnet format --verify-no-changes --no-restore    # стиль з .editorconfig
-dotnet test --no-build
+dotnet test --no-build                            # інтеграційні тести потребують Docker (Testcontainers)
 dotnet run --project src/Host/Taiken.Api          # /health/live, /health/ready
+```
+
+Локальний Postgres (`deploy/compose.yaml` + `deploy/compose.override.yaml`, TAI-11):
+
+```sh
+cp deploy/.env.example deploy/.env   # один раз
+docker compose --project-directory deploy up -d
+dotnet user-secrets set ConnectionStrings:Postgres "Host=127.0.0.1;Port=5432;Database=taiken;Username=taiken;Password=changeme" --project src/Host/Taiken.Api
+```
+
+Міграція для модуля (`ModuleDbContext`, `Taiken.Persistence`) — з проєкту модуля, зі старт-проєктом хоста:
+
+```sh
+dotnet ef migrations add <Name> --project src/Modules/<Name>/Taiken.<Name> --startup-project src/Host/Taiken.Api
 ```
 
 Ті самі кроки виконує CI (`.github/workflows/dotnet.yml`).
@@ -87,6 +101,10 @@ dotnet run --project src/Host/Taiken.Api          # /health/live, /health/ready
 - **Видимість.** У реалізації модуля й адаптера все `internal`. Виняток — Wolverine handlers: `public`,
   бо Wolverine за замовчуванням знаходить лише public-типи. Межу модуля тримають ArchitectureTests,
   а не модифікатори доступу.
+- **Wolverine handler.** Патерн (ADR 0004): venue-scoped команда (`IVenueScopedMessage`),
+  `DbContext`-параметр у транзакційній middleware, каскадна подія, що публікується лише після коміту.
+  Еталонний файл з'явиться з першим реальним handler (`PaymentCompleted`, M3–M4) — тестовий handler
+  з TAI-11 еталоном не є, лише перевіряє інфраструктуру. До того орієнтуйся на ADR 0004.
 - **Реєстрація модуля.** `AddXModule(this IServiceCollection, IConfiguration)` +
   `MapXEndpoints(this IEndpointRouteBuilder)`. Host лише викликає їх.
 - **Провайдери.** Адаптер реєструється як keyed service з ключем, що збігається зі значенням
