@@ -5,6 +5,10 @@
     <Project Path="src/Core/Taiken.Persistence/Taiken.Persistence.csproj" />
     <Project Path="src/Core/Taiken.Messaging/Taiken.Messaging.csproj" />
   </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/Venues/Taiken.Venues.Contracts/Taiken.Venues.Contracts.csproj" />
+    <Project Path="src/Modules/Venues/Taiken.Venues/Taiken.Venues.csproj" />
+  </Folder>
   <Folder Name="/src/Host/">
     <Project Path="src/Host/Taiken.Api/Taiken.Api.csproj" />
   </Folder>
@@ -15,5 +19,6 @@
     <Project Path="tests/Taiken.Testing/Taiken.Testing.csproj" />
     <Project Path="tests/Taiken.ArchitectureTests/Taiken.ArchitectureTests.csproj" />
     <Project Path="tests/Taiken.ContractTests/Taiken.ContractTests.csproj" />
+    <Project Path="tests/Taiken.Venues.Tests/Taiken.Venues.Tests.csproj" />
   </Folder>
 </Solution>

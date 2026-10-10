@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\Taiken.Persistence\Taiken.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Venues\Taiken.Venues\Taiken.Venues.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Venues\Taiken.Venues.Contracts\Taiken.Venues.Contracts.csproj" />
+    <ProjectReference Include="..\Taiken.Testing\Taiken.Testing.csproj" />
+  </ItemGroup>
+
+</Project>
