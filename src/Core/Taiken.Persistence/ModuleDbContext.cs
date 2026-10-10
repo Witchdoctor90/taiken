@@ -15,7 +15,8 @@ namespace Taiken.Persistence;
 /// </summary>
 public abstract class ModuleDbContext : DbContext
 {
-    private const string VenueIsolationFilterName = "venue";
+    /// <summary>Name of the Global Query Filter this class applies for venue isolation (ADR 0002), for model tests that need to tell it apart from other named filters (e.g. soft delete).</summary>
+    public const string VenueIsolationFilterName = "venue";
 
     protected ModuleDbContext(DbContextOptions options, IVenueContext venueContext)
         : base(options)
@@ -47,7 +48,7 @@ public abstract class ModuleDbContext : DbContext
                 continue;
             }
 
-            if (entityType.FindAnnotation(VenueScopeModelBuilderExtensions.NotVenueScopedAnnotation) is not null)
+            if (entityType.IsVenueScopeOptedOut())
             {
                 continue;
             }

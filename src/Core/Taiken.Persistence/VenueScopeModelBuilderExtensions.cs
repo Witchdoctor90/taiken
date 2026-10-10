@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Taiken.Persistence;
@@ -17,4 +18,8 @@ public static class VenueScopeModelBuilderExtensions
         builder.Metadata.SetAnnotation(NotVenueScopedAnnotation, true);
         return builder;
     }
+
+    /// <summary>Introspection counterpart of <see cref="IsNotVenueScoped{TEntity}"/>, for model tests.</summary>
+    public static bool IsVenueScopeOptedOut(this IReadOnlyEntityType entityType) =>
+        entityType.FindAnnotation(NotVenueScopedAnnotation) is not null;
 }

@@ -4,7 +4,7 @@ using Taiken.Shared;
 namespace Taiken.Persistence.Tests;
 
 [Collection(PostgreSqlCollection.Name)]
-public sealed class VenueIsolationTests(PostgreSqlFixture fixture)
+public sealed class VenueIsolationTests(PersistenceFixture fixture)
 {
     [Fact]
     public async Task Venue_a_does_not_see_venue_b_data()

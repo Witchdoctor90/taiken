@@ -12,5 +12,8 @@
     <Project Path="tests/Taiken.Shared.Tests/Taiken.Shared.Tests.csproj" />
     <Project Path="tests/Taiken.Persistence.Tests/Taiken.Persistence.Tests.csproj" />
     <Project Path="tests/Taiken.Messaging.Tests/Taiken.Messaging.Tests.csproj" />
+    <Project Path="tests/Taiken.Testing/Taiken.Testing.csproj" />
+    <Project Path="tests/Taiken.ArchitectureTests/Taiken.ArchitectureTests.csproj" />
+    <Project Path="tests/Taiken.ContractTests/Taiken.ContractTests.csproj" />
   </Folder>
 </Solution>

@@ -12,6 +12,8 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.4" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.4" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <!-- TAI-12: static dependency-rule checks in Taiken.ArchitectureTests (visibility rule). -->
+    <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
     <PackageVersion Include="Testcontainers.PostgreSql" Version="4.15.0" />
     <PackageVersion Include="WolverineFx" Version="6.39.1" />

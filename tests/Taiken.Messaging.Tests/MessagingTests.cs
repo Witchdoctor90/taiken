@@ -13,7 +13,7 @@ namespace Taiken.Messaging.Tests;
 // The dead-letter test is the one ADR 0004 asks TAI-11 for: "обробник, що падає N разів,
 // потрапляє в dead letter; повтор після виправлення обробляє його один раз."
 [Collection(PostgreSqlCollection.Name)]
-public sealed class MessagingTests(PostgreSqlFixture fixture)
+public sealed class MessagingTests(MessagingFixture fixture)
 {
     [Fact]
     public async Task Outbox_write_is_atomic_with_the_database_write()
