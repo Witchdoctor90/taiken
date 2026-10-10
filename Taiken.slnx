@@ -14,8 +14,6 @@
   </Folder>
   <Folder Name="/src/Fakes/">
     <Project Path="src/Fakes/Taiken.FakePos/Taiken.FakePos.csproj" />
-  </Folder>
-  <Folder Name="/src/Fakes/">
     <Project Path="src/Fakes/Taiken.FakePsp/Taiken.FakePsp.csproj" />
   </Folder>
   <Folder Name="/tests/">
