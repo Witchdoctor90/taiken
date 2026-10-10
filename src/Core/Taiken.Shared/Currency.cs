@@ -17,4 +17,12 @@ public sealed record Currency
     public static readonly Currency All = new("ALL", 2);
 
     public static readonly Currency Eur = new("EUR", 2);
+
+    private static readonly IReadOnlyDictionary<string, Currency> ByCode =
+        new[] { All, Eur }.ToDictionary(c => c.Code);
+
+    /// <summary>Looks up a known ISO 4217 currency by its alphabetic code (e.g. "EUR").</summary>
+    public static Currency FromCode(string code) => ByCode.TryGetValue(code, out var currency)
+        ? currency
+        : throw new ArgumentException($"Unknown ISO 4217 currency code: '{code}'.", nameof(code));
 }

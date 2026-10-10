@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Taiken.Messaging\Taiken.Messaging.csproj" />
     <ProjectReference Include="..\..\Core\Taiken.Persistence\Taiken.Persistence.csproj" />
+    <ProjectReference Include="..\..\Modules\Venues\Taiken.Venues\Taiken.Venues.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Taiken.Messaging;
 using Taiken.Persistence;
+using Taiken.Venues;
 using Wolverine;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddVenueContext();
 
 builder.Host.UseWolverine(opts => opts.AddTaikenMessaging(connectionString));
+
+builder.Services.AddVenuesModule(builder.Configuration);
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(connectionString, name: "postgres", tags: ["ready"]);

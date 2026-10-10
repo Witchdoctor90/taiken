@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="NetArchTest.Rules" />
     <PackageReference Include="xunit" />
@@ -10,6 +11,15 @@
 
   <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Real assemblies needed for reflection-based rules (VisibilityTests, Contracts-leak
+         check) — unlike DependencyRuleTests, which reads .csproj files straight off disk and
+         needs no project references at all. -->
+    <ProjectReference Include="..\..\src\Core\Taiken.Shared\Taiken.Shared.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Venues\Taiken.Venues.Contracts\Taiken.Venues.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Venues\Taiken.Venues\Taiken.Venues.csproj" />
   </ItemGroup>
 
 </Project>
