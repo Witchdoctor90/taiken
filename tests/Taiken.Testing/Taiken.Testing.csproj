@@ -1,5 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <!-- Shared test infrastructure, not a test assembly itself (tests/README.md): referencing
+         xunit for IAsyncLifetime alone makes the SDK auto-detect this as a test project, so
+         `dotnet test` spawns a testhost for it that crashes before collecting anything. -->
+    <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Testcontainers.PostgreSql" />
     <PackageReference Include="xunit" />
