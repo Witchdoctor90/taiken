@@ -17,7 +17,11 @@
     <!-- TAI-13: DemoVenueSeeder is an IHostedService; Taiken.Venues is a plain class library
          (Microsoft.NET.Sdk), so Hosting.Abstractions isn't pulled in by an SDK like Sdk.Web is. -->
     <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.4" />
+    <!-- TAI-14: Taiken.FakePsp.Tests drives Program.cs in-process via WebApplicationFactory. -->
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.4" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <!-- TAI-14: controls the session clock from tests (expiry) without real Task.Delay waits. -->
+    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.10.0" />
     <!-- TAI-12: static dependency-rule checks in Taiken.ArchitectureTests (visibility rule). -->
     <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
