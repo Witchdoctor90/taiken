@@ -13,6 +13,9 @@
     <Project Path="src/Host/Taiken.Api/Taiken.Api.csproj" />
   </Folder>
   <Folder Name="/src/Fakes/">
+    <Project Path="src/Fakes/Taiken.FakePos/Taiken.FakePos.csproj" />
+  </Folder>
+  <Folder Name="/src/Fakes/">
     <Project Path="src/Fakes/Taiken.FakePsp/Taiken.FakePsp.csproj" />
   </Folder>
   <Folder Name="/tests/">
@@ -23,6 +26,7 @@
     <Project Path="tests/Taiken.ArchitectureTests/Taiken.ArchitectureTests.csproj" />
     <Project Path="tests/Taiken.ContractTests/Taiken.ContractTests.csproj" />
     <Project Path="tests/Taiken.Venues.Tests/Taiken.Venues.Tests.csproj" />
+    <Project Path="tests/Taiken.FakePos.Tests/Taiken.FakePos.Tests.csproj" />
     <Project Path="tests/Taiken.FakePsp.Tests/Taiken.FakePsp.Tests.csproj" />
   </Folder>
 </Solution>

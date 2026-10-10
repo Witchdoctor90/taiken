@@ -75,3 +75,8 @@ dist/
 
 # dotenv environment variables file (local overrides)
 .env.local
+
+# Taiken.FakePos's own SQLite storage (ADR: "SQLite (volume)" - a local file here, not committed)
+src/Fakes/Taiken.FakePos/*.db
+src/Fakes/Taiken.FakePos/*.db-shm
+src/Fakes/Taiken.FakePos/*.db-wal
